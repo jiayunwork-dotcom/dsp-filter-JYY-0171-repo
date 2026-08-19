@@ -18,9 +18,6 @@ func impulseAt(i int) float64 {
 func StepResponse(f *DirectFormI, n int) []float64 {
 	out := make([]float64, n)
 	for i := range out {
-		for j := range f.y {
-			f.y[j] = 0
-		}
 		out[i] = f.Step(1)
 	}
 	return out

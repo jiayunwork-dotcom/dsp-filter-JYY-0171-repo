@@ -31,7 +31,7 @@ func (f *DirectFormI) Step(input float64) float64 {
 		out += f.B[i] * f.x[i]
 	}
 	for i := 1; i < len(f.A); i++ {
-		out -= f.A[i] * f.y[i]
+		out -= f.A[i] * f.y[i-1]
 	}
 	shiftRight(f.y)
 	f.y[0] = out
